@@ -10,6 +10,87 @@
 
 <h3 id="en">📚 EN 📚</h3>
 
+# Acceptance criteria
+
+- Repository `react-hw-02-feedback` created
+- When submitting homework, there are two links: to the source files and working
+
+pages of each task on `GitHub Pages`.
+
+- When running the task code, there are no errors or warnings in the console.
+- Each component has a separate file in the `src/components` folder.
+- `propTypes` are described for the components.
+- Everything that the component expects as props is passed to it when called.
+- JS code is clean and clear, `Prettier` is used.
+- Styling is done by `CSS modules` or `Styled Components`.
+
+# Feedback widget
+
+Like most companies, Expresso Cafe collects feedback from its customers. Your
+task is to create an application for collecting statistics. There are only three
+options for feedback: good, neutral and bad.
+
+## Step 1
+
+The application should display the number of reviews collected for each
+category. The application should not save review statistics between different
+sessions (page refresh).
+
+The application state must be of the following type, new properties cannot be
+added.
+
+```bash
+state = {
+good: 0,
+neutral: 0,
+bad: 0
+}
+```
+
+The interface may look like this.
+
+![preview](./hw/step-1.png)
+
+## Step 2
+
+Expand the functionality of the application so that the interface displays more
+statistics about the collected reviews. Add a display of the total number of
+reviews collected from all categories and the percentage of positive reviews. To
+do this, create helper methods `countTotalFeedback()` and
+`countPositiveFeedbackPercentage()`, which calculate these values ​​​​based on
+the data in the state (calculated data).
+
+![preview](./hw/step-2.png)
+
+## Step 3
+
+Refactor the application. The application state should remain in the root
+component `<App>`.
+
+- Move the statistics display to a separate component
+
+`<Statistics good={} neutral={} bad={} total={} positivePercentage={}>`.
+
+- Move the button block to the
+
+`<FeedbackOptions options={} onLeaveFeedback={}>` component.
+
+- Create a `<Section title="">` component that renders a section with a title
+  and
+
+children. Wrap each of `<Statistics>` and `<FeedbackOptions>` in
+
+the created section component.
+
+## Step 4
+
+Extend the functionality of the application so that the statistics block is
+rendered only after at least one review has been collected. Message about
+absence of statistics move to the component
+`<Notification message="There is no feedback">`.
+
+![preview](./hw/preview.gif)
+
 ---
 
 ---
